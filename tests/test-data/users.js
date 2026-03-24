@@ -71,15 +71,6 @@ const verificationUser = {
   },
 };
 
-// Accounts Flow
-const tradeAccountUser = {
-  name: 'Trade Account',
-  email: 'trade.account@fake.test',
-  userId: '6877a71c9f6d804546f62134',
-  password: process.env.TRADE_ACCOUNT_PASSWORD,
-  totpSecret: process.env.TRADE_ACCOUNT_TOTP_SECRET,
-};
-
 // Payments Flow (Deposit, Transfers, Withdraw)
 const paymentUser = {
   deposit: {
@@ -114,4 +105,4 @@ const logoutUser = {
   recaptcha: process.env.LOGOUT_RECAPTCHA,
 };
 
-export { adminUser, signUpUser, loginUser, verificationUser, paymentUser, logoutUser, tradeAccountUser };
+export { adminUser, signUpUser, loginUser, verificationUser, paymentUser, logoutUser };
