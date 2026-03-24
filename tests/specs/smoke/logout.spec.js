@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { DashboardPage, LoginPage } from '../../../pageObjectModel/pages/index.js';
-import { HeaderSection } from '../../../pageObjectModel/sections/index.js';
-import { logoutUser } from '../../../test-data/users.js';
+import { DashboardPage, LoginPage } from '../../pageObjectModel/pages/index.js';
+import { HeaderSection } from '../../pageObjectModel/sections/index.js';
+import { logoutUser } from '../../test-data/users.js';
 import dotenv from 'dotenv';
 dotenv.config();
 

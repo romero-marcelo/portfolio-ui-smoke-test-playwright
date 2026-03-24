@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { paymentUser } from '../../../test-data/users.js';
-import { LoginPage, Verify2FAPage, DashboardPage, TransfersPage } from '../../../pageObjectModel/pages/index.js';
-import { getOtpfromAPP } from '../../../helpers/index.js';
-import { AdminApi } from '../../../helpers/adminHelper.js';
+import { paymentUser } from '../../test-data/users.js';
+import { LoginPage, Verify2FAPage, DashboardPage, TransfersPage } from '../../pageObjectModel/pages/index.js';
+import { getOtpfromAPP } from '../../helpers/index.js';
+import { AdminApi } from '../../helpers/adminHelper.js';
 import dotenv from 'dotenv';
 dotenv.config();
 

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { paymentUser } from '../../../test-data/users.js';
-import { LoginPage, Verify2FAPage, DashboardPage, WithdrawPage } from '../../../pageObjectModel/pages/index.js';
-import { getOtpfromAPP } from '../../../helpers/index.js';
+import { paymentUser } from '../../test-data/users.js';
+import { LoginPage, Verify2FAPage, DashboardPage, WithdrawPage } from '../../pageObjectModel/pages/index.js';
+import { getOtpfromAPP } from '../../helpers/index.js';
 import dotenv from 'dotenv';
 dotenv.config();
 

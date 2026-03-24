@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { verificationUser } from '../../../test-data/users.js';
-import { LoginPage, Verify2FAPage, VerificationPage } from '../../../pageObjectModel/pages/index.js';
-import { SumSubModal, LetsGetYouVerifiedSection } from '../../../pageObjectModel/sections/index.js';
-import { getOtpfromAPP, resetKycUser } from '../../../helpers/index.js';
+import { verificationUser } from '../../test-data/users.js';
+import { LoginPage, Verify2FAPage, VerificationPage } from '../../pageObjectModel/pages/index.js';
+import { SumSubModal, LetsGetYouVerifiedSection } from '../../pageObjectModel/sections/index.js';
+import { getOtpfromAPP, resetKycUser } from '../../helpers/index.js';
 import dotenv from 'dotenv';
 dotenv.config();
 

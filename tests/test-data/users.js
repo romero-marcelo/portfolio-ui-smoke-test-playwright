@@ -2,11 +2,6 @@ import { faker } from '@faker-js/faker';
 import dotenv from 'dotenv';
 dotenv.config();
 
-/*
-Users Test Data for all testing flows: Admin, Sign-Up, Login, KYC Verification, Accounts, Payments, Logout.
-Users' sensitive data like passwords, TOTP secrets, and recaptcha tokens are stored in environment variables.
-*/
-
 // Admin Users
 const adminUser = {
   email: 'admin@fake.test',
@@ -25,7 +20,7 @@ const signUpUser = {
       firstName: 'SignUp_QA',
       middleName: faker.person.middleName(),
       lastName: faker.person.lastName(),
-      emailAddress: `user.signup${Date.now()}@fake.test`,      // Dynamic unique email for each test run
+      emailAddress: `user.signup${Date.now()}@fake.test`,      
       password: process.env.SIGNUP_PASSWORD,
       companyName: faker.company.name(),
     },

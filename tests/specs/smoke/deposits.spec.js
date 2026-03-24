@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { paymentUser } from '../../../test-data/users.js';
-import { LoginPage, Verify2FAPage, DashboardPage, DepositsPage } from '../../../pageObjectModel/pages/index.js';
-import { getOtpfromAPP } from '../../../helpers/index.js';
+import { paymentUser } from '../../test-data/users.js';
+import { LoginPage, Verify2FAPage, DashboardPage, DepositsPage } from '../../pageObjectModel/pages/index.js';
+import { getOtpfromAPP } from '../../helpers/index.js';
 import { faker } from '@faker-js/faker';
 import dotenv from 'dotenv';
 dotenv.config();
-
+  
 test('Deposit flow and Payment Gateway handshake', async ({ page }) => {
   
   const loginPage = new LoginPage(page);
