@@ -1,8 +1,7 @@
 import { test as base } from '@playwright/test';
 import { getOtpfromAPP } from '../helpers/index.js';
-import { LoginPage, Verify2FAPage } from '../pageObjectModel/pages/index.js';
+import { LoginPage, Verify2FAPage, DashboardPage } from '../pageObjectModel/pages/index.js';
 import { HeaderSection } from '../pageObjectModel/sections/index.js';
-import { loginUser } from '../test-data/users.js';
 
 export const test = base.extend({
   pageObjects: async ({ page }, use) => {
@@ -10,7 +9,8 @@ export const test = base.extend({
       page,
       loginPage: new LoginPage(page),
       verify2FAPage: new Verify2FAPage(page),
-      headerSection: new HeaderSection(page)
+      headerSection: new HeaderSection(page),
+      dashboardPage: new DashboardPage(page)
     };
     
     await use(pageObjects);
@@ -18,13 +18,12 @@ export const test = base.extend({
 
   performLogin: async ({ pageObjects }, use) => {
     const loginFunction = async (userType) => {
-      const user = loginUser[userType];
 
       await pageObjects.loginPage.goto();
-      await pageObjects.loginPage.enterUserCredentials(user.email, user.password);
+      await pageObjects.loginPage.enterUserCredentials(userType.email, userType.password);
       await pageObjects.loginPage.clickLoginButton();
 
-      const otp = getOtpfromAPP(user);
+      const otp = getOtpfromAPP(userType);
       await pageObjects.verify2FAPage.enterOTP(otp);
 
       await pageObjects.headerSection.userGreeting().waitFor({ state: 'visible' });
