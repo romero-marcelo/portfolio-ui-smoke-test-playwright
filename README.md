@@ -1,7 +1,11 @@
 # Portfolio: Fintech Broker UI Test Suite
 
-End-to-end **smoke test suite** for a fintech broker platform, built with **Playwright** and **Page Object Model**. Validates critical user journeys using **API** and **DB-backed test data management**.
+**Smoke test suite** for a fintech broker platform, built with **Playwright** and **Page Object Model**. Validates critical user journeys using **API** and **DB-backed test data management**.
 
+> ⚠️ **Disclaimer:** This is a showcase project for portfolio purposes only.
+> All credentials, endpoints, and environment values have been modified or
+> anonymised to avoid exposing confidential company information.
+> The project is not intended to be executed locally.
 
 ## What this suite validates
 
@@ -23,13 +27,13 @@ End-to-end **smoke test suite** for a fintech broker platform, built with **Play
 
 ## Tech stack
 
-| Tool | Purpose |
-|---|---|
-| **Playwright** | Browser automation and test runner |
-| **JavaScript** | Test language |
-| **MongoDB driver** | Direct DB reads for verification links |
-| **otplib** | TOTP token generation for 2FA |
-| **@faker-js/faker** | Dynamic test data generation |
+| Tool                | Purpose                                |
+| ------------------- | -------------------------------------- |
+| **Playwright**      | Browser automation and test runner     |
+| **JavaScript**      | Test language                          |
+| **MongoDB driver**  | Direct DB reads for verification links |
+| **otplib**          | TOTP token generation for 2FA          |
+| **@faker-js/faker** | Dynamic test data generation           |
 
 ## Repo Structure
 
@@ -37,27 +41,26 @@ End-to-end **smoke test suite** for a fintech broker platform, built with **Play
 tests/
 ├── fixtures/                           # Custom fixtures for login automation
 │   └── auth.fixture.js
-├── helpers/                           
+├── helpers/
 │   ├── adminHelper.js                 # Admin API auth + KYC reset
 │   ├── authenticator.js               # TOTP generation
 │   ├── index.js                       # Centralized exports
 │   └── mongoHelper.js                 # MongoDB lookup for verification link
-├── pageObjectModel/                    
+├── pageObjectModel/
 │   ├── pages/                          # Full page objects
 │   └── sections/                       # Reusable UI components
-├── specs/                              
+├── specs/
 │   └── smoke/                          # Smoke test specs
-└── test-data/                          
+└── test-data/
     ├── env.js                          # Environment config
     └── users.js                         # User fixtures
-     
+
 .env.example                         # Environment variables template
 ```
 
-
 ## Notes for reviewers
 
-- This is a **Smoke Suite** — it targets critical happy paths, not exhaustive coverage. The goal is fast, reliable feedback after every deployment.
+- This is a **Smoke Suite** — it targets critical happy paths, not exhaustive coverage. The goal is fast, reliable feedback immediately after deployment to verify the release is stable enough to proceed.
 - Third-party integrations (payment gateways, KYC provider) are validated by confirming the handshake is reached, not by controlling their responses.
 
 ## Contact
